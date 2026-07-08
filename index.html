@@ -15,6 +15,11 @@
       --gray-light: #f5f6fa;
       --gray-mid: #e2e5ef;
       --gray-text: #555c7a;
+      --green-bg: #f0f8f0;
+      --green-border: #c8e6c9;
+      --green-head: #2d7a3a;
+      --red-bg: #fff5f5;
+      --red-border: #fca5a5;
       --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
@@ -48,13 +53,12 @@
       margin-top: 4px;
     }
     .header .tagline {
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.7);
       font-style: italic;
     }
 
-    /* BADGE */
     .proposal-badge {
       background: var(--yellow);
       color: var(--navy);
@@ -66,14 +70,12 @@
       text-transform: uppercase;
     }
 
-    /* CONTENT WRAPPER */
     .wrapper {
       max-width: 680px;
       margin: 0 auto;
       padding: 0 16px 60px;
     }
 
-    /* SECTION */
     .section {
       background: var(--white);
       border-radius: 10px;
@@ -103,7 +105,7 @@
     }
     .section p:last-child { margin-bottom: 0; }
 
-    /* META TABLE */
+    /* META */
     .meta-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -124,7 +126,7 @@
       color: var(--navy);
     }
 
-    /* PRICING CARDS */
+    /* PRICING */
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -136,7 +138,6 @@
       border-radius: 10px;
       padding: 20px 16px;
       text-align: center;
-      transition: border-color 0.2s;
     }
     .price-card.featured {
       border-color: var(--yellow);
@@ -150,9 +151,7 @@
       color: var(--gray-text);
       margin-bottom: 6px;
     }
-    .price-card.featured .plan-name {
-      color: var(--navy);
-    }
+    .price-card.featured .plan-name { color: var(--navy); }
     .price-card .price-amount {
       font-size: 2.2rem;
       font-weight: 900;
@@ -165,12 +164,20 @@
       margin-top: 4px;
     }
     .price-card .price-note {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--gray-text);
       margin-top: 8px;
-      font-style: italic;
     }
-    .price-card .badge-best {
+    .price-card .price-breakdown {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 8px;
+      background: rgba(255,184,0,0.15);
+      border-radius: 6px;
+      padding: 6px 8px;
+    }
+    .badge-rec {
       display: inline-block;
       background: var(--yellow);
       color: var(--navy);
@@ -213,7 +220,55 @@
       margin-top: 1px;
     }
 
-    /* CALLOUT BOX */
+    /* PEST COVERAGE */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .covered-box {
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .covered-box h4 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green-head);
+      margin-bottom: 8px;
+    }
+    .notcovered-box {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .notcovered-box h4 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+    .covered-box li, .notcovered-box li {
+      font-size: 0.82rem;
+      color: #333;
+      line-height: 1.7;
+      margin-left: 14px;
+    }
+    .pest-note {
+      font-size: 0.75rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    /* CALLOUT */
     .callout {
       background: #eef0f8;
       border-left: 4px solid var(--navy);
@@ -223,7 +278,7 @@
       font-size: 0.88rem;
       color: var(--navy);
     }
-    .callout strong { display: block; margin-bottom: 4px; font-size: 0.9rem; }
+    .callout strong { display: block; margin-bottom: 4px; }
 
     /* CREDENTIALS */
     .cred-grid {
@@ -250,7 +305,28 @@
       margin-top: 4px;
     }
 
-    /* CONTACT BLOCK */
+    /* NO CONTRACT */
+    .no-contract {
+      border: 2px solid var(--yellow);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 14px;
+      text-align: center;
+      background: #fffbee;
+    }
+    .no-contract .nc-head {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .no-contract p {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin: 0;
+    }
+
+    /* CONTACT */
     .contact-block {
       border-top: 2px solid var(--gray-mid);
       margin-top: 20px;
@@ -274,7 +350,68 @@
       margin-right: 16px;
       margin-bottom: 4px;
     }
-    .contact-block a:hover { text-decoration: underline; }
+
+    /* SIGNATURE */
+    .sig-section {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px 24px;
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(26,37,87,0.07);
+      border-top: 4px solid var(--navy);
+    }
+    .sig-section .section-label { color: var(--navy); }
+    .sig-section .section-title { margin-bottom: 10px; }
+    .sig-section p {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-bottom: 18px;
+    }
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 10px;
+    }
+    .sig-block label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 6px;
+    }
+    .sig-line {
+      border-bottom: 1.5px solid #333;
+      height: 36px;
+      margin-bottom: 6px;
+    }
+    .sig-block .sig-name {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+    }
+    .sig-date-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .sig-date-row label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 6px;
+    }
+    .sig-date-row .sig-line { height: 30px; }
+    .terms-note {
+      font-size: 0.75rem;
+      color: #aaa;
+      font-style: italic;
+      margin-top: 18px;
+      line-height: 1.5;
+    }
 
     /* FOOTER */
     .footer {
@@ -288,8 +425,8 @@
     .footer strong { color: var(--yellow); }
 
     /* MOBILE */
-    @media (max-width: 480px) {
-      .pricing-grid { grid-template-columns: 1fr; }
+    @media (max-width: 500px) {
+      .pricing-grid, .two-col, .sig-grid, .sig-date-row { grid-template-columns: 1fr; }
       .meta-grid { grid-template-columns: 1fr; }
       .cred-grid { grid-template-columns: 1fr 1fr; }
       .header .logo-text { font-size: 1.6rem; }
@@ -305,7 +442,7 @@
     <div class="tagline">Integrative Pest Management &bull; Central Florida</div>
   </div>
 
-  <div class="proposal-badge">Commercial Pest Management Proposal</div>
+  <div class="proposal-badge">Commercial Pest Management Proposal &amp; Service Agreement</div>
 
   <div class="wrapper">
 
@@ -315,20 +452,28 @@
       <div class="section-title">Church of Eleven22</div>
       <div class="meta-grid">
         <div class="meta-item">
-          <label>Contact</label>
-          <span>Nevin Seitz</span>
+          <label>Attention</label>
+          <span>Mr. Nevin Seitz</span>
         </div>
         <div class="meta-item">
           <label>Date</label>
           <span>July 8, 2026</span>
         </div>
         <div class="meta-item">
-          <label>Location</label>
-          <span>Central Florida Region</span>
+          <label>Address</label>
+          <span>250 Ivanhoe Blvd SW, Orlando, FL</span>
         </div>
         <div class="meta-item">
-          <label>Site Type</label>
-          <span>Multisite / Construction</span>
+          <label>Property Type</label>
+          <span>Commercial &mdash; Church Facility</span>
+        </div>
+        <div class="meta-item">
+          <label>Phone</label>
+          <span>(904) 579-6806</span>
+        </div>
+        <div class="meta-item">
+          <label>Email</label>
+          <span>Nevin.Seitz@coe22.com</span>
         </div>
       </div>
     </div>
@@ -336,16 +481,16 @@
     <!-- SCOPE -->
     <div class="section">
       <div class="section-label">Scope of Service</div>
-      <div class="section-title">Customized Pest Management System</div>
+      <div class="section-title">Customized Pest Management Program</div>
       <p>
-        Pest Pro proposes a comprehensive Pest-Pro Active Ecological Maintenance program for Church of Eleven22's Central Florida locations. Our approach is built on Integrated Pest Management (IPM) principles, targeting existing pest pressures while establishing proactive barriers to prevent future activity.
+        Pest Pro is pleased to present this proposal for a comprehensive Integrated Pest Management program at Church of Eleven22's Orlando facility. Our program is designed around the specific needs of a church environment: high foot traffic, community gatherings, food-service areas, and the expectation of a clean, safe, and welcoming space for congregants.
       </p>
       <p>
-        Given the active construction environment, our program will account for the elevated pest access points common to ongoing build sites, including harborage areas, exposed materials, and frequent contractor traffic.
+        We understand the property is currently in the final phase of renovation. Our service program is structured to begin during this transition period and continue seamlessly as the facility opens for regular use &mdash; no interruption, no restart fees.
       </p>
       <div class="callout">
-        <strong>Multisite Flexibility</strong>
-        This proposal covers per-location service pricing. As Church of Eleven22's Central Florida footprint grows or service locations are added, pricing and scheduling can be scaled accordingly with no disruption to existing accounts.
+        <strong>No Disruption to Operations</strong>
+        Service visits are scheduled around your calendar. We work around staff, services, and events to ensure treatments are completed with zero disruption to the congregation or facility operations.
       </div>
     </div>
 
@@ -356,20 +501,26 @@
       <div class="pricing-grid">
 
         <div class="price-card featured">
-          <div class="badge-best">Most Popular</div>
-          <div class="plan-name">Monthly Service</div>
-          <div class="price-amount">$220</div>
-          <div class="price-period">per location / month</div>
-          <div class="price-note">12 visits per year</div>
+          <div class="badge-rec">Recommended</div>
+          <div class="plan-name">Bi-Monthly Service</div>
+          <div class="price-amount">$260</div>
+          <div class="price-period">per service visit &mdash; every 2 months</div>
+          <div class="price-breakdown">$130 / month &mdash; guaranteed service</div>
+          <div class="price-note">6 scheduled visits per year with guaranteed callback coverage between visits at no additional charge.</div>
         </div>
 
         <div class="price-card">
-          <div class="plan-name">Bi-Monthly Service</div>
-          <div class="price-amount">$280</div>
-          <div class="price-period">per location / service</div>
-          <div class="price-note">6 visits per year</div>
+          <div class="plan-name">Monthly Service</div>
+          <div class="price-amount">$200</div>
+          <div class="price-period">per month &mdash; 12 visits per year</div>
+          <div class="price-note">Ideal for higher pest activity or during the early phase of a new program.</div>
         </div>
 
+      </div>
+
+      <div class="no-contract">
+        <div class="nc-head">No Contracts Required</div>
+        <p>We don't believe in locking clients into long-term agreements. We earn your continued business with every service visit &mdash; and we intend to keep earning it.</p>
       </div>
     </div>
 
@@ -380,11 +531,11 @@
       <ul class="includes-list">
         <li>
           <span class="icon">&#10003;</span>
-          <span>Interior and exterior perimeter treatment targeting roaches, ants, spiders, silverfish, and other common commercial pests</span>
+          <span>Interior and exterior perimeter treatment targeting all covered pest species</span>
         </li>
         <li>
           <span class="icon">&#10003;</span>
-          <span>Gel bait application in harborage zones, utility corridors, and kitchen/breakroom areas</span>
+          <span>Gel bait application in harborage zones, utility corridors, and kitchen or food-service areas</span>
         </li>
         <li>
           <span class="icon">&#10003;</span>
@@ -396,44 +547,53 @@
         </li>
         <li>
           <span class="icon">&#10003;</span>
-          <span>Digital service report after every visit</span>
+          <span>Digital service report delivered after every visit</span>
         </li>
         <li>
           <span class="icon">&#10003;</span>
-          <span>Between-visit callback service at no additional charge</span>
+          <span>Between-visit callback service at no additional charge for all covered pests</span>
         </li>
         <li>
           <span class="icon">&#10003;</span>
-          <span>Direct communication with licensed technician — no call centers</span>
+          <span>Direct communication with your licensed technician &mdash; no call centers, no runaround</span>
         </li>
       </ul>
     </div>
 
-    <!-- CONSTRUCTION NOTE -->
+    <!-- PEST COVERAGE -->
     <div class="section">
-      <div class="section-label">Construction Site Protocol</div>
-      <div class="section-title">Built for Active Build Sites</div>
-      <p>
-        Construction sites present unique pest challenges. Exposed soil, lumber, standing water, and open access points create ideal conditions for rapid pest establishment. Pest Pro's construction-phase program addresses these proactively.
-      </p>
-      <ul class="includes-list">
-        <li>
-          <span class="icon">&#10003;</span>
-          <span>Rodent bait station placement along the perimeter prior to drywall close</span>
-        </li>
-        <li>
-          <span class="icon">&#10003;</span>
-          <span>Pre-treatment of wall voids and utility chases during build phase</span>
-        </li>
-        <li>
-          <span class="icon">&#10003;</span>
-          <span>Coordination with site foreman or property manager for access scheduling</span>
-        </li>
-        <li>
-          <span class="icon">&#10003;</span>
-          <span>Service adjusts seamlessly from construction phase to occupied facility with no program interruption</span>
-        </li>
-      </ul>
+      <div class="section-label">Pest Coverage</div>
+      <div class="section-title">What's Included &amp; What's Not</div>
+      <div class="two-col">
+        <div class="covered-box">
+          <h4>&#10003; Included at Flat Rate</h4>
+          <ul>
+            <li>Cockroaches, all species including German roach</li>
+            <li>Palmetto bugs and American roaches</li>
+            <li>General ants (exclusions noted)</li>
+            <li>Spiders</li>
+            <li>Silverfish and firebrats</li>
+            <li>Rodents &mdash; rats and mice, interior and exterior</li>
+            <li>House flies and drain flies</li>
+            <li>Stored product pests</li>
+            <li>Occasional invaders: crickets, earwigs, centipedes</li>
+            <li>General household and commercial pest insects</li>
+          </ul>
+        </div>
+        <div class="notcovered-box">
+          <h4>&#10007; Not Covered &mdash; Quoted Separately</h4>
+          <ul>
+            <li><strong>Bed bugs</strong> &mdash; quoted and billed per occurrence</li>
+            <li>Fire ants, Pharaoh ants, Carpenter ants</li>
+            <li>Fleas and ticks</li>
+            <li>Bees, wasps, and hornets</li>
+            <li>Wildlife, snakes, and nuisance animals</li>
+            <li>Termites and wood-destroying organisms</li>
+            <li>Stinging or venomous insects</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pest-note">Non-covered pest services are always quoted prior to service. Emergency response for non-covered pests: $180.00 per visit.</p>
     </div>
 
     <!-- CREDENTIALS -->
@@ -455,19 +615,19 @@
         </div>
         <div class="cred-item">
           <div class="cred-value">100%</div>
-          <div class="cred-label">Florida-Licensed, Fully Insured</div>
+          <div class="cred-label">Florida-Licensed &amp; Fully Insured</div>
         </div>
       </div>
       <p style="margin-top:16px; font-size:0.85rem;">
-        Pest Pro has served commercial facilities, healthcare properties, hospitality accounts, and construction sites across the Central Florida region. We hold all required state licenses and carry full general liability and workers' compensation coverage.
+        Pest Pro serves commercial facilities, church properties, healthcare accounts, and hospitality clients across Central Florida. We hold all required state licenses and carry full general liability coverage.
       </p>
     </div>
 
     <!-- CONTACT -->
     <div class="section">
-      <div class="section-label">Ready to Move Forward?</div>
-      <div class="section-title">Let's Get Started</div>
-      <p>We're ready to build a service program around Church of Eleven22's schedule and site requirements. Reach out directly and we'll get you set up.</p>
+      <div class="section-label">Questions?</div>
+      <div class="section-title">Reach Us Directly</div>
+      <p>We're glad to walk through any questions about this proposal before you present it. Call or email anytime.</p>
       <div class="contact-block">
         <div class="name">Daniel Rumsey, CPO</div>
         <div class="title">Owner / CEO &mdash; Pest Pro, LLC</div>
@@ -475,6 +635,53 @@
         <a href="mailto:Daniel@PestProLLC.com">&#9993; Daniel@PestProLLC.com</a>
         <a href="https://www.pestprollc.com" target="_blank">&#127760; PestProLLC.com</a>
       </div>
+    </div>
+
+    <!-- SIGNATURE / AGREEMENT -->
+    <div class="sig-section">
+      <div class="section-label">Service Agreement</div>
+      <div class="section-title">Authorization to Proceed</div>
+      <p>
+        By signing below, Church of Eleven22 authorizes Pest Pro, LLC to begin commercial pest management services as outlined in this proposal. Selected service plan, pricing, and terms are confirmed by both parties. This agreement requires no minimum term and may be cancelled at any time with written notice.
+      </p>
+
+      <p style="font-size:0.85rem; font-weight:600; color: var(--navy); margin-bottom:4px;">Selected Service Plan:</p>
+      <div style="display:flex; gap:24px; margin-bottom:22px;">
+        <label style="font-size:0.9rem; display:flex; align-items:center; gap:8px; cursor:pointer;">
+          <input type="checkbox" style="width:16px;height:16px;"> &nbsp;Bi-Monthly &mdash; $260/service ($130/month)
+        </label>
+        <label style="font-size:0.9rem; display:flex; align-items:center; gap:8px; cursor:pointer;">
+          <input type="checkbox" style="width:16px;height:16px;"> &nbsp;Monthly &mdash; $200/month
+        </label>
+      </div>
+
+      <div class="sig-grid">
+        <div class="sig-block">
+          <label>Authorized Signature &mdash; Church of Eleven22</label>
+          <div class="sig-line"></div>
+          <div class="sig-name">Authorized Representative</div>
+        </div>
+        <div class="sig-block">
+          <label>Signature &mdash; Pest Pro, LLC</label>
+          <div class="sig-line"></div>
+          <div class="sig-name">Daniel Rumsey, CPO &mdash; Owner / CEO</div>
+        </div>
+      </div>
+
+      <div class="sig-date-row">
+        <div>
+          <label>Printed Name &amp; Title</label>
+          <div class="sig-line"></div>
+        </div>
+        <div>
+          <label>Date</label>
+          <div class="sig-line"></div>
+        </div>
+      </div>
+
+      <p class="terms-note">
+        This proposal constitutes a service agreement upon signature by both parties. Services begin on a mutually agreed start date. Either party may cancel with written notice. Non-covered pest services are quoted separately prior to treatment. Pest Pro, LLC reserves the right to adjust service frequency recommendations based on observed pest activity.
+      </p>
     </div>
 
   </div>
