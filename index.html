@@ -47,7 +47,7 @@
       gap: 6px;
     }
     .header-logo {
-      height: 56px;
+      height: 84px;
       width: auto;
       display: block;
     }
@@ -441,6 +441,71 @@
     }
     .footer strong { color: var(--yellow); }
 
+    /* PRINT */
+    @media print {
+      @page { size: letter; margin: 0.55in 0.6in 0.65in; }
+      body {
+        background: #fff;
+        font-size: 9pt;
+        color: #111;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .proposal-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 8pt; padding: 6px 16px; }
+      .wrapper { max-width: 100%; padding: 0; }
+      .section, .sig-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 7pt;
+        padding: 10pt 12pt;
+        page-break-inside: avoid;
+      }
+      .header { padding: 10pt 14pt; page-break-after: avoid; }
+      .header-logo { height: 44pt; }
+      .header-vant { height: 52pt; }
+      .header .logo-sub { font-size: 7pt; }
+      .header .tagline { font-size: 7.5pt; margin-top: 4px; }
+      /* Page break strategy: 3 pages */
+      .pb-before { page-break-before: always !important; }
+      .pricing-grid, .two-col, .includes-list, .cred-grid, .sig-grid, .no-contract { page-break-inside: avoid; }
+      /* Typography */
+      .section-title { font-size: 11pt; margin-bottom: 6pt; }
+      .section-label { font-size: 6.5pt; margin-bottom: 3pt; }
+      .section p { font-size: 8.5pt; margin-bottom: 5pt; }
+      .includes-list li { font-size: 8pt; padding: 4pt 0; }
+      .includes-list li .icon { width: 16px; height: 16px; font-size: 7pt; }
+      .covered-box li, .notcovered-box li { font-size: 8pt; line-height: 1.5; }
+      .covered-box, .notcovered-box { padding: 10px; }
+      .covered-box h4, .notcovered-box h4 { font-size: 7pt; margin-bottom: 5px; }
+      .pest-note { font-size: 7pt; }
+      .price-card { padding: 12px 10px; }
+      .price-card .price-amount { font-size: 18pt; }
+      .price-card .plan-name { font-size: 7pt; }
+      .price-card .price-period, .price-card .price-note { font-size: 7.5pt; }
+      .price-card .price-breakdown { font-size: 8pt; padding: 4px 6px; }
+      .badge-rec { font-size: 6pt; padding: 2px 8px; margin-bottom: 5px; }
+      .no-contract { padding: 12px 14px; margin-top: 8pt; }
+      .no-contract .nc-head { font-size: 9pt; }
+      .no-contract p { font-size: 8pt; }
+      .cred-item { padding: 10px; }
+      .cred-item .cred-value { font-size: 14pt; }
+      .cred-item .cred-label { font-size: 7pt; }
+      .meta-grid { gap: 8px; }
+      .meta-item label { font-size: 6.5pt; }
+      .meta-item span { font-size: 8.5pt; }
+      .callout { padding: 10px 12px; font-size: 8pt; margin-top: 8pt; }
+      .callout strong { font-size: 8.5pt; }
+      .contact-block .name { font-size: 9pt; }
+      .contact-block .title { font-size: 7.5pt; }
+      .contact-block a { font-size: 8pt; }
+      .sig-section p { font-size: 8pt; }
+      .sig-block label, .sig-date-row label { font-size: 6.5pt; }
+      .sig-block .sig-name { font-size: 7.5pt; }
+      .terms-note { font-size: 7pt; margin-top: 10pt; }
+      .footer { display: none; }
+    }
+
     /* MOBILE */
     @media (max-width: 500px) {
       .pricing-grid, .two-col, .sig-grid, .sig-date-row { grid-template-columns: 1fr; }
@@ -581,7 +646,7 @@
     </div>
 
     <!-- PEST COVERAGE -->
-    <div class="section">
+    <div class="section pb-before">
       <div class="section-label">Pest Coverage</div>
       <div class="section-title">What's Included &amp; What's Not</div>
       <div class="two-col">
@@ -658,7 +723,7 @@
     </div>
 
     <!-- SIGNATURE / AGREEMENT -->
-    <div class="sig-section">
+    <div class="sig-section pb-before">
       <div class="section-label">Service Agreement</div>
       <div class="section-title">Authorization to Proceed</div>
       <p>
